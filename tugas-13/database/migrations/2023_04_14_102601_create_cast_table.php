@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id_user');
+        Schema::create('cast', function (Blueprint $table) {
+            $table->bigIncrements('id_cast');
             $table->string('nama',45);
-            $table->string('email',45);
-            $table->string('password',45);
+            $table->integer('umur');
+            $table->text('bio');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('cast');
     }
 };
